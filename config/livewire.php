@@ -31,6 +31,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Layout
+    |--------------------------------------------------------------------------
+    | The default layout view that will be used when rendering a component via
+    | Route::get('/some-endpoint', SomeComponent::class);. In this case the
+    | the view returned by SomeComponent will be wrapped in "layouts.app"
+    |
+    */
+
+    'layout' => 'layouts.app',
+
+    /*
+    |--------------------------------------------------------------------------
     | Livewire Assets URL
     |--------------------------------------------------------------------------
     |
@@ -42,7 +54,7 @@ return [
     |
     */
 
-    'asset_url'  => null,
+    'asset_url' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +67,7 @@ return [
     |
     */
 
-    'middleware_group'  => 'web',
+    'middleware_group' => 'web',
 
     /*
     |--------------------------------------------------------------------------
@@ -79,6 +91,7 @@ return [
             'mov', 'avi', 'wmv', 'mp3', 'm4a',
             'jpg', 'jpeg', 'mpga', 'webp', 'wma',
         ],
+        'max_upload_time' => 5, // Max duration (in minutes) before an upload gets invalidated.
     ],
 
     /*

@@ -104,6 +104,8 @@ trait HandlesActions
 
     public function callMethod($method, $params = [])
     {
+        $method = trim($method);
+
         switch ($method) {
             case '$sync':
                 $prop = array_shift($params);
@@ -127,7 +129,7 @@ trait HandlesActions
                 } else {
                     $currentValue = $this->{$prop};
                 }
-                
+
                 $this->syncInput($prop, ! $currentValue, $rehash = false);
 
                 return;
